@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profiles</title>
+    <style>
+        .user-card {
+            border: 1px solid #444;
+            padding:14px;
+            margin:10px 0;
+            max-width:550px;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Profile List</h1>
+    <div id="userContainer"></div>
+
+    <script>
+        fetch('userProfiles.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Fetch error: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(json => {
+            const container = document.getElementById('userContainer');
+            json.forEach(user => {
+                const card = document.createElement('div');
+                card.className = 'user-card';
+                card.innerHTML = `
+                    <p><strong>First Name:</strong> ${user.firstName}</p>
+                    <p><strong>Last Name:</strong> ${user.lastName}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>Date of Birth:</strong> ${user.dateOfBirth}</p>
+                    <p><strong>Street:</strong> ${user.address.street}</p>
+                    <p><strong>City:</strong> ${user.address.city}</p>
+                    <p><strong>State:</strong> ${user.address.state}</p>
+                    <p><strong>Zip Code:</strong> ${user.address.zipCode}</p>
+                    <p><strong>Theme:</strong> ${user.preferences.theme}</p>
+                    <p><strong>Language:</strong> ${user.preferences.language}</p>
+                    <p><strong>Notifications:</strong> ${user.preferences.notifications}</p>
+                    <p><strong>Newsletter Subscription:</strong> ${user.preferences.subscription}</p>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(err => {
+            console.error('Fetch error: ' + err.message);
+            document.getElementById('userContainer').innerText = "Failed to load user data.";
+        });
+    </script>
+</body>
+</html>

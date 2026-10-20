@@ -1,0 +1,56 @@
+[
+    {
+        "firstName": "ning",
+        "lastName": "wei",
+        "email": "1619436606@qq.com",
+        "dateOfBirth": "2004‑11‑05",
+        "address": {
+            "street": "whitehouse",
+            "city": "la",
+            "state": "us",
+            "zipCode": "666666"
+        },
+        "preferences": {
+            "theme": "dark",
+            "language": "en",
+            "notifications": true,
+            "subscription": true
+        }
+    },
+    {
+        "firstName": "Liam",
+        "lastName": "Lawson",
+        "email": "liam.lawson@163.com",
+        "dateOfBirth": "2002‑04‑22",
+        "address": {
+            "street": "redbull",
+            "city": "new york",
+            "state": "NZ",
+            "zipCode": "12345"
+        },
+        "preferences": {
+            "theme": "light",
+            "language": "es",
+            "notifications": false,
+            "subscription": false
+        }
+    },
+    {
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "email": "lewis.hamilton@example.com",
+        "dateOfBirth": "1985‑07‑07",
+        "address": {
+            "street": "Ferrari Street",
+            "city": "UK",
+            "state": "London",
+            "zipCode": "44444"
+        },
+        "preferences": {
+            "theme": "dark",
+            "language": "fr",
+            "notifications": true,
+            "subscription": false
+        }
+    }
+]
